@@ -85,6 +85,14 @@ ifconfig
 
 If the setup is correct, you will not be prompted for a password when SSHing from `server1` to `server2`.
 
+If you see SSH 22 refused error message , run the following command on both server to open port 22
+
+```bash
+sudo apt-get update
+sudo apt-get install openssh-server
+sudo ufw allow 22
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -103,3 +111,4 @@ In this template:
 - **Contributing**: Invitation for contributions.
 
 Replace placeholders like `myusername`, `server1`, and `server2` with your actual usernames and server names. Ensure the public key example is representative of a typical RSA key but remind users that their key will be unique.
+
