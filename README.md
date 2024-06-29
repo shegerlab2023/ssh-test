@@ -14,8 +14,6 @@ Having to constantly type in your password on a Linux server that you SSH to oft
 First, connect to `server1` and generate a public/private key pair.
 
 ```bash
-ssh myusername@server1_IP
-password:
 ssh-keygen -t rsa
 ```
 
@@ -67,8 +65,6 @@ hwkfds+Q9/kjaV55pMZIh+9jhoA8acCA6B55DYrgPSycW6fEyV/1PIER+a5lOXp1QCn0U+XFTb85dp5f
 Next, SSH to `server2` and add the public key to the `authorized_keys` file.
 
 ```bash
-ssh myusername@server2_IP
-password:
 mkdir -p ~/.ssh
 cd ~/.ssh
 vi authorized_keys
@@ -81,10 +77,10 @@ chmod 600 authorized_keys
 Finally, test that your setup is working.
 
 ```bash
-ssh myusername@server1_IP
-password:
 ssh myusername@server2_IP
-# you should not be prompted for a password!
+# you should not be prompted for a password! make sure username and ip collected from server 2
+To get IP, run 
+ifconfig 
 ```
 
 If the setup is correct, you will not be prompted for a password when SSHing from `server1` to `server2`.
